@@ -17,19 +17,19 @@ class ListProperties extends Component {
     state = {
         items: [{
                 id: uuid(),
-                name: 'Eggs'
+                name: 'Casa do Neymar'
             },
             {
                 id: uuid(),
-                name: 'Milk'
+                name: 'Apartamento em Santos'
             },
             {
                 id: uuid(),
-                name: 'Steak'
+                name: 'Casa do Ronaldinho'
             },
             {
                 id: uuid(),
-                name: 'Water'
+                name: 'Apartamento do Romário'
             }
         ]
     }
@@ -37,23 +37,35 @@ class ListProperties extends Component {
         const { items } = this.state;
         return(
             <Container>
-                <Button color="dark" style={{marginBottom: '2rem'}}
+                <Button color="primary" style={{marginBottom: '2rem'}}
                 onClick={() => {
-                    const name = prompt('Enter Item');
+                    const name = prompt('Insira o nome do Imóvel');
                     if(name){
                         this.setState(state => ({
                             items: [...state.items, {id: uuid(), name}]
                         }));
                     }
                 }}
-                >Add Item</Button>
+                >Adicionar Imóvel</Button>
 
                 <ListGroup>
                     <TransitionGroup className="list-properties">
                     {items.map(({id, name}) => (
               <CSSTransition key={id} timeout={500} classNames="fade">
-                <ListGroupItem>
+                <ListGroupItem>            
                   {name}
+                  <Button
+                    className="remove-btn float-right"
+                    color="danger"
+                    size="sm"
+                    onClick={() => {
+                       this.setState(state =>({
+                            items: state.items.filter(item => item.id !== id)
+                        }));
+                      }}
+                  >
+                    &times;
+                  </Button>
                 </ListGroupItem>
               </CSSTransition>
             ))}
@@ -62,6 +74,7 @@ class ListProperties extends Component {
             </Container>
         );
     }
+
 }
 
 export default ListProperties;
