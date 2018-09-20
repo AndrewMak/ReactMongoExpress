@@ -14,6 +14,8 @@ import {
 import { connect } from 'react-redux';
 import { getItems, deleteItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 class ListProperties extends Component {
     componentDidMount() {
         this.props.getItems();
@@ -32,7 +34,7 @@ class ListProperties extends Component {
                     {items.map(({ _id, name }) => (
               <CSSTransition key={_id} timeout={500} classNames="fade">
                 <ListGroupItem>                 
-                  {name}
+                <FontAwesomeIcon icon="store" /> {name}
                   <Button
                     className="remove-btn float-right"
                     color="danger"
