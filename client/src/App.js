@@ -9,7 +9,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCheckSquare, faCoffee, faHome, faStore } from '@fortawesome/free-solid-svg-icons';
- 
 library.add(faCheckSquare, faCoffee, faHome, faStore)
 
 class App extends Component {
