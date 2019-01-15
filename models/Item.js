@@ -10,6 +10,9 @@ const ItemSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
+  }, 
+  price: {
+    type: Number
   }
 });
 

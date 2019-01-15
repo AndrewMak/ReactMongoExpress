@@ -32,7 +32,8 @@ class ItemModal extends Component {
     e.preventDefault();
 
     const newItem = {
-      name: this.state.name
+      name: this.state.name,
+      price: this.state.price
     };
 
     // Add item via addItem action
@@ -64,6 +65,13 @@ class ItemModal extends Component {
                   name="name"
                   id="item"
                   placeholder="Casa da Praia Neymar"
+                  onChange={this.onChange}
+                />
+                 <Input
+                  type="text"
+                  name="price"
+                  id="item"
+                  placeholder="1000"
                   onChange={this.onChange}
                 />
                 <Button color="dark" style={{ marginTop: '2rem' }} block>

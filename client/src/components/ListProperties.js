@@ -31,10 +31,10 @@ class ListProperties extends Component {
             <Container>
                 <ListGroup>
                     <TransitionGroup className="list-properties">
-                    {items.map(({ _id, name }) => (
+                    {items.map(({ _id, name, price }) => (
               <CSSTransition key={_id} timeout={500} classNames="fade">
                 <ListGroupItem>                 
-                <FontAwesomeIcon icon="store" /> {name}
+                <FontAwesomeIcon icon="store" /> {name} ({price})
                   <Button
                     className="remove-btn float-right"
                     color="danger"
